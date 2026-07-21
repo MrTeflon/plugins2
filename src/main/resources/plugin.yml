@@ -1,0 +1,23 @@
+name: InfiniteTotem
+version: '1.0.0'
+main: pl.mrteflon.infinitetotem.InfiniteTotem
+api-version: '1.21'
+author: Mr_Teflon
+description: Totem of Undying, ktory nie ginie po uzyciu.
+
+commands:
+  itotem:
+    description: Wydaje totem, zmienia cooldown lub sprawdza status.
+    usage: /itotem [give|cooldown|sprawdz]
+    aliases: [infinitetotem]
+
+permissions:
+  infinitetotem.give:
+    description: Pozwala wydawac nieskonczone totemy.
+    default: op
+  infinitetotem.cooldown:
+    description: Pozwala zmieniac cooldown totemu.
+    default: op
+  infinitetotem.check:
+    description: Pozwala sprawdzac czas odnowienia totemu.
+    default: true

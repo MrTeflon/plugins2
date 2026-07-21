@@ -1,0 +1,3 @@
+# Cooldown totemu w sekundach - mozna tez zmieniac na zywo komenda:
+# /itotem cooldown <sekundy>
+cooldown-seconds: 30
