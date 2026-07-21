@@ -1,0 +1,30 @@
+name: Build InfiniteTotem
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Pobierz kod
+        uses: actions/checkout@v4
+
+      - name: Zainstaluj Javę 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+          cache: 'maven'
+
+      - name: Zbuduj plugin (mvn package)
+        run: mvn -B clean package
+
+      - name: Wystaw gotowy .jar do pobrania
+        uses: actions/upload-artifact@v4
+        with:
+          name: InfiniteTotem-jar
+          path: target/InfiniteTotem.jar
